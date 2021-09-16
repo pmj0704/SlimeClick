@@ -1,0 +1,14 @@
+﻿{
+    "nickname": "",
+    "slimes": 5,
+    "slimePerClick": 1,
+    "unitList": [
+        {
+            "name": "고사리 같은 손",
+            "imageNumber": 0,
+            "amount": 0,
+            "price": 150,
+            "sPs": 3
+        }
+    ]
+}

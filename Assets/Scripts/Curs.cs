@@ -9,6 +9,8 @@ public class Curs : MonoBehaviour
     public Vector3 targetPos;
     private CircleCollider2D collider2D = null;
     [SerializeField]
+    private GameObject quitPanel;
+    [SerializeField]
     private Camera main;
 
     private void Awake()
@@ -25,8 +27,18 @@ public class Curs : MonoBehaviour
             if(targetPos.y > 0)
             {
                 transform.position = targetPos;
-                GameManager.Instance.setMousePos(targetPos);
+                GameManager.Instance.setMousePos(transform.position);
+                Debug.Log(transform.position);
+                RippleEffect.Instance.Emit();
                 StartCoroutine(Fade());
+            }
+        }
+         if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            quitPanel.SetActive(true);
+            if(quitPanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
             }
         }
     }
